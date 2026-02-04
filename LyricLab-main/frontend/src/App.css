@@ -1,0 +1,129 @@
+/* LyricLab App Styles */
+
+/* Global app container */
+.App {
+    min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+}
+
+/* Focus visible styling */
+:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+}
+
+/* Prevent text selection on buttons */
+button {
+    user-select: none;
+}
+
+/* Lyrics editor specific styles */
+.lyrics-editor {
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 2;
+    letter-spacing: 0.01em;
+}
+
+/* Section headers in lyrics */
+.lyrics-editor [class*="VERSE"],
+.lyrics-editor [class*="CHORUS"],
+.lyrics-editor [class*="BRIDGE"] {
+    color: hsl(var(--primary));
+    font-weight: 600;
+}
+
+/* Slider track styling */
+[role="slider"] {
+    transition: transform 0.15s ease-out;
+}
+
+[role="slider"]:hover {
+    transform: scale(1.1);
+}
+
+/* Card hover effects */
+.song-card {
+    transition: all 0.3s ease-out;
+}
+
+.song-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.15);
+}
+
+/* Badge animations */
+.badge-pulse {
+    animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Loading states */
+.loading-shimmer {
+    background: linear-gradient(
+        90deg,
+        hsl(var(--muted)) 0%,
+        hsl(var(--muted-foreground) / 0.1) 50%,
+        hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Textarea auto-resize feel */
+textarea {
+    field-sizing: content;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .lyrics-editor {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
+/* Print styles for exporting */
+@media print {
+    .noise-overlay,
+    header,
+    button,
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .lyrics-editor {
+        font-size: 12pt;
+        line-height: 1.8;
+    }
+}

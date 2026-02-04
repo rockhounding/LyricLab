@@ -1,0 +1,150 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "LyricLab",
+      "tagline": "Where Sound Meets Syntax",
+      "tone": "Creative, Focused, Rhythmic, Experimental",
+      "visual_archetype": "The Electric Studio"
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Outfit, sans-serif",
+        "body": "DM Sans, sans-serif",
+        "editor": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-bold tracking-tighter",
+        "h2": "text-3xl md:text-5xl font-semibold tracking-tight",
+        "h3": "text-2xl md:text-3xl font-medium",
+        "body": "text-base md:text-lg leading-relaxed",
+        "label": "text-xs font-bold uppercase tracking-widest text-muted-foreground"
+      },
+      "imports": [
+        "@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;700;900&display=swap');"
+      ]
+    },
+    "colors": {
+      "theme": "dark",
+      "palette": {
+        "background": "#050505",
+        "foreground": "#f8fafc",
+        "card": "#0f0f11",
+        "card_foreground": "#f8fafc",
+        "popover": "#0f0f11",
+        "popover_foreground": "#f8fafc",
+        "primary": "#7C3AED",
+        "primary_foreground": "#ffffff",
+        "secondary": "#1e1e24",
+        "secondary_foreground": "#f8fafc",
+        "muted": "#1e1e24",
+        "muted_foreground": "#94a3b8",
+        "accent": "#db2777",
+        "accent_foreground": "#ffffff",
+        "destructive": "#7f1d1d",
+        "destructive_foreground": "#fef2f2",
+        "border": "#27272a",
+        "input": "#27272a",
+        "ring": "#7C3AED"
+      },
+      "usage": {
+        "primary": "Main actions (Generate, Save), Active states",
+        "accent": "Creative triggers (Rewrite, Inspire Me), Highlights",
+        "background": "Global app background (Deep Obsidian)",
+        "card": "Panels, Song Cards, Control Groups"
+      }
+    },
+    "layout": {
+      "spacing": {
+        "container_padding": "p-6 md:p-12",
+        "section_gap": "gap-8 md:gap-16",
+        "element_gap": "gap-4"
+      },
+      "grid_strategies": {
+        "dashboard": "grid grid-cols-1 lg:grid-cols-12 gap-6",
+        "library": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      },
+      "border_radius": {
+        "default": "rounded-xl",
+        "card": "rounded-2xl",
+        "button": "rounded-full"
+      }
+    },
+    "visual_enhancers": {
+      "glassmorphism": "backdrop-blur-xl bg-black/40 border border-white/10",
+      "gradients": {
+        "hero": "bg-gradient-to-br from-violet-900/20 via-background to-background",
+        "glow": "shadow-[0_0_40px_-10px_rgba(124,58,237,0.3)]"
+      },
+      "textures": "bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none fixed inset-0 z-50",
+      "animation": {
+        "hover": "transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg",
+        "active": "active:scale-95"
+      }
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-primary/25 rounded-full px-8 py-6 font-bold tracking-wide",
+      "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full px-6 py-4 font-medium",
+      "ghost": "hover:bg-white/5 text-muted-foreground hover:text-foreground"
+    },
+    "inputs": {
+      "default": "bg-input/50 border-transparent focus:border-primary focus:ring-1 focus:ring-primary/50 rounded-lg h-12 px-4 font-medium transition-all",
+      "textarea": "bg-transparent border-none focus:ring-0 resize-none font-mono text-lg leading-loose p-0 placeholder:text-muted-foreground/30"
+    },
+    "cards": {
+      "song_spec": "bg-card border border-border/50 p-6 rounded-2xl shadow-xl",
+      "library_item": "group relative bg-card hover:bg-card/80 border border-border/50 p-6 rounded-2xl transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10"
+    },
+    "navigation": {
+      "sidebar": "hidden lg:flex flex-col w-64 border-r border-border/50 bg-card/50 backdrop-blur-xl h-screen sticky top-0 p-6",
+      "mobile_nav": "lg:hidden fixed bottom-0 left-0 right-0 bg-card/90 backdrop-blur-xl border-t border-border p-4 z-50"
+    }
+  },
+  "pages": {
+    "landing_generate": {
+      "layout": "flex flex-col lg:flex-row h-screen overflow-hidden",
+      "left_panel": {
+        "width": "w-full lg:w-[400px] xl:w-[450px]",
+        "style": "bg-card/30 border-r border-border/50 overflow-y-auto p-6 space-y-8 scrollbar-hide",
+        "content": "SongSpec Controls (Genre, Mood, Structure Sliders)"
+      },
+      "right_panel": {
+        "width": "flex-1",
+        "style": "relative bg-background flex flex-col",
+        "content": "Lyrics Editor Canvas, Action Bar"
+      }
+    },
+    "library": {
+      "layout": "container mx-auto py-12 px-4 md:px-8",
+      "grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+      "empty_state": "flex flex-col items-center justify-center h-[60vh] text-center space-y-4"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1759912804199-a104b710a308?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHNvdW5kJTIwd2F2ZSUyMHZpc3VhbGl6YXRpb258ZW58MHx8fHwxNzcwMDgxMTAxfDA&ixlib=rb-4.1.0&q=85",
+      "musician_context": "https://images.unsplash.com/photo-1556296569-44d434fb28d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwyfHxtdXNpYyUyMHN0dWRpbyUyMG5lb24lMjBkYXJrfGVufDB8fHx8MTc3MDA4MTA5NHww&ixlib=rb-4.1.0&q=85",
+      "writing_context": "https://images.unsplash.com/photo-1727812100173-b33044cd3071?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxzb25nd3JpdGVyJTIwd3JpdGluZyUyMGx5cmljcyUyMG5vdGVib29rfGVufDB8fHx8MTc3MDA4MTA5Nnww&ixlib=rb-4.1.0&q=85"
+    },
+    "icons": "lucide-react"
+  },
+  "instructions_to_main_agent": [
+    "IMPLEMENT DARK MODE BY DEFAULT. Ensure 'dark' class is applied to the root/html element.",
+    "Use the 'Outfit' font for all headings to give a distinct brand feel. Use 'JetBrains Mono' for the actual lyrics text area.",
+    "The 'Generate' page should feel like a cockpit. The left panel is the instrument, the right panel is the stage.",
+    "For the 'SongSpec' controls, use Shadcn Sliders and Selects, but style them with the 'accent' color (Electric Violet).",
+    "The Lyrics Editor should NOT look like a standard text input. Remove borders, increase line height, center it visually (max-w-2xl mx-auto).",
+    "Use 'Sonner' for all notifications (Generation complete, Saved, etc.).",
+    "Ensure the 'Library' cards have a subtle glow on hover using the primary color.",
+    "Do not use generic gray backgrounds. Use the specific hex codes provided in the palette.",
+    "Add the noise texture overlay to the entire app for a 'film grain' / 'analog' feel."
+  ],
+  "universal_guidelines": [
+    "Avoid 'AI Slop' - no generic centered layouts without purpose.",
+    "Use 2-3x more spacing than typical designs.",
+    "Every interaction needs micro-animations.",
+    "Never use transparent backgrounds without a blur or scrim.",
+    "All interactive elements must have data-testid attributes."
+  ]
+}
